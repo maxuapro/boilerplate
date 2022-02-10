@@ -3,10 +3,15 @@ import React, { FC } from 'react';
 import { useRoutes, Navigate } from 'react-router-dom';
 
 // Pages
-import { Main, Register, Items, Item } from '../pages';
+import { Main, Register, Items, Item, ReactReduxLessons, LessonsPage } from '../pages';
 
 export const Public: FC = () => {
     const routes = useRoutes([
+        {
+            path:    'lessons',
+            element: <ReactReduxLessons />,
+        },
+        { path: '/lessons/:lesson', element: <LessonsPage /> },
         {
             path:     '',
             element:  <Main />,

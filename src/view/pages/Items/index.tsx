@@ -33,7 +33,12 @@ const Items: FC<PropTypes> = () => {
         <S.Container addStyle = {{ backgroundColor: 'bisque' }}>
             Page: Items
             <div>
-                {items.map((item) => <S.NavButton to = { item.id }>{item.name}</S.NavButton>)}
+                {items.map((item) => (
+                    <S.NavButton
+                        key = { item.id }
+                        to = { item.id }>{item.name}
+                    </S.NavButton>
+                ))}
             </div>
             <Outlet />
         </S.Container>
